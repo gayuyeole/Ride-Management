@@ -1,0 +1,36 @@
+{% extends "templates/base.html" %}
+
+{% block title %}
+    {{ _("Gayatri.cabs vehicles") }}
+{% endblock %}  
+
+{% block content %}
+<div class="container">
+    <h2>
+        {{ _("Gayatri.cabs vehicles") }}
+    </h2>
+
+    <div class="mt-10"></div>
+
+    <div>
+        {% for vehicle in vehicles %}
+
+        <div class="mb-10">
+            <h5>{{ vehicle.make }}</h5>
+            <div>
+                {{ _("Model") }} {{ vehicle.model }} {{ _("Purchased in year") }} <b>{{ vehicle.year }}</b>
+
+            </div>
+
+
+
+        </div>
+        {% endfor %}
+
+    </div>
+    <a class="btn btn-primary btn-md" href="ride-order/new">
+        {{ _("Book a ride") }}
+    </a>
+
+</div>
+{% endblock %}
